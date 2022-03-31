@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.ibexlab.samples'
+version = '0.0.1'
+sourceCompatibility = '1.8'
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.4.4'
+}
+
+tasks.withType(JavaExec) {
+    group = 'application'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+tasks.register('createAddress', JavaExec) {
+    main = 'com.ibexlab.samples.Address'
+}
+
+tasks.register('getBalance', JavaExec) {
+    main = 'com.ibexlab.samples.Balance'
+}
+
+tasks.register('transfer', JavaExec) {
+    main = 'com.ibexlab.samples.Transfer'
+}
