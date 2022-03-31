@@ -26,7 +26,7 @@ tasks.withType(JavaExec) {
 }
 
 tasks.register('createAddress', JavaExec) {
-    main = 'com.ibexlab.samples.Address'
+    main = 'com.ibexlab.samples.AddressCreation'
 }
 
 tasks.register('getBalance', JavaExec) {
@@ -35,4 +35,12 @@ tasks.register('getBalance', JavaExec) {
 
 tasks.register('transfer', JavaExec) {
     main = 'com.ibexlab.samples.Transfer'
+}
+
+tasks.register('authenticate', JavaExec) {
+    main = 'com.ibexlab.samples.Authentication'
+}
+
+tasks.register('points', JavaExec) {
+    main = 'com.ibexlab.samples.Points'
 }

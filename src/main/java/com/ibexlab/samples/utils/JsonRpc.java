@@ -63,7 +63,7 @@ public class JsonRpc extends RpcBase {
      * </pre>
      *
      * @param response 응답 JSON
-     * @return result
+     * @return 결과 Map
      */
     public static Map<String, Object> getResultData(String response) {
         if (response == null) {
@@ -87,10 +87,22 @@ public class JsonRpc extends RpcBase {
         }
     }
 
+    /**
+     * 토큰 API 호출
+     *
+     * @param request 요청 JSON
+     * @return 응답 JSON
+     */
     public static String tokenApi(String request) {
         return request(URL_TOKEN_API, request);
     }
 
+    /**
+     * 서버 Wallet API 호출
+     *
+     * @param request 요청 JSON
+     * @return 응답 JSON
+     */
     public static String walletApi(String request) {
         return request(URL_WALLET_API, request);
     }

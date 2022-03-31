@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * 계좌 생성
  */
-public class Address {
+public class AddressCreation {
     public static void main(String[] args) {
         // "Sample Address" 이란 이름의 계좌를 생성함
         createAddress("Sample Address");

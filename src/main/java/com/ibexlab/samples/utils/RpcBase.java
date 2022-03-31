@@ -1,9 +1,6 @@
 package com.ibexlab.samples.utils;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -20,12 +17,22 @@ abstract class RpcBase {
     }
 
     static String request(String spec, String request) {
+        return request(spec, request, null);
+    }
+
+    static String request(String spec, String request, String jwt) {
         System.out.println(spec + " >>> " + request);
+
         try {
             URL url = new URL(spec);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-Type", "application/json");
+
+            if (jwt != null) {
+                con.setRequestProperty("Authorization", "Bearer " + jwt);
+            }
+
             con.setDoOutput(true);
             DataOutputStream out = new DataOutputStream(con.getOutputStream());
             out.write(request.getBytes());
@@ -33,15 +40,20 @@ abstract class RpcBase {
             out.close();
 
             int status = con.getResponseCode();
-            BufferedReader in = new BufferedReader(new InputStreamReader(status > 299 ? con.getErrorStream() : con.getInputStream()));
+            InputStream is = status > 299 ? con.getErrorStream() : con.getInputStream();
             StringBuilder content = new StringBuilder();
-            String line;
 
-            while ((line = in.readLine()) != null) {
-                content.append(line);
+            if (is != null) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(is));
+                String line;
+
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                }
+
+                in.close();
             }
 
-            in.close();
             con.disconnect();
 
             if (status > 299) {

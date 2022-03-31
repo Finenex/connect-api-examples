@@ -16,6 +16,7 @@ public class Transfer {
     private static final int MAX_WAIT_SEC = 10;
 
     public static void main(String[] args) {
+        // NLP 토큰 이체
         transfer(
                 Token.NLP, // 사용할 토큰
                 Address.ADDRESS1, // 송신 계좌 
@@ -25,6 +26,7 @@ public class Transfer {
                 "Transfer (NLP)" // 적요
         );
 
+        // NURI 토큰 이체
         transfer(
                 Token.NURI,
                 Address.ADDRESS1,
@@ -41,13 +43,16 @@ public class Transfer {
 
         // 2. 해시 키 구함
         String hashKey = getHashKey(tempKey, secret);
+        System.out.println("------------------------------------------------");
 
         // 3. 서명 구함
         String message = contract + "|" + from + "|" + to + "|" + amount + "|" + tempKey + "|" + hashKey;
         String signature = getSignature(message, from, tempKey, hashKey);
+        System.out.println("------------------------------------------------");
 
         // 4. 이체 요청
         String transactionId = requestTransfer(contract, from, to, amount, comment, tempKey, hashKey, signature);
+        System.out.println("------------------------------------------------");
 
         // 5. 이체 결과를 기다림
         int status = waitForTransferComplete(transactionId);
