@@ -1,6 +1,6 @@
-package com.ibexlab.samples;
+package com.ibexlab.api.examples;
 
-import com.ibexlab.samples.utils.Rest;
+import com.ibexlab.api.examples.utils.Rest;
 
 import java.util.HashMap;
 import java.util.Map;

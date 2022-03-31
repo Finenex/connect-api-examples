@@ -1,8 +1,8 @@
-package com.ibexlab.samples;
+package com.ibexlab.api.examples;
 
-import com.ibexlab.samples.constants.Address;
-import com.ibexlab.samples.constants.Token;
-import com.ibexlab.samples.utils.JsonRpc;
+import com.ibexlab.api.examples.constants.Token;
+import com.ibexlab.api.examples.utils.JsonRpc;
+import com.ibexlab.api.examples.constants.Address;
 
 import java.util.HashMap;
 import java.util.Map;

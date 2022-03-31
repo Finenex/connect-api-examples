@@ -1,4 +1,4 @@
-# Token Api Samples #
+# Connect API Examples #
 
 Token API 및 Points API를 사용하는 예제 제공.
 

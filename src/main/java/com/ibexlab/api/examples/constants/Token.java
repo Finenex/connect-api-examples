@@ -1,4 +1,4 @@
-package com.ibexlab.samples.constants;
+package com.ibexlab.api.examples.constants;
 
 /**
  * 토큰 Contract Address

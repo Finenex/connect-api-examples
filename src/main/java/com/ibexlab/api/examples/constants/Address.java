@@ -1,4 +1,4 @@
-package com.ibexlab.samples.constants;
+package com.ibexlab.api.examples.constants;
 
 /**
  * 테스트를 위한 계좌 정보 (테스트를 위해 사전에 생성하였음)

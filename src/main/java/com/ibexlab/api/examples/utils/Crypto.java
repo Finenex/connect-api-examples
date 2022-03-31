@@ -1,4 +1,4 @@
-package com.ibexlab.samples.utils;
+package com.ibexlab.api.examples.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

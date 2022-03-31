@@ -1,4 +1,4 @@
-package com.ibexlab.samples.utils;
+package com.ibexlab.api.examples.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

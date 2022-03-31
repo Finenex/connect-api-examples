@@ -1,10 +1,10 @@
-package com.ibexlab.samples;
+package com.ibexlab.api.examples;
 
-import com.ibexlab.samples.constants.Address;
-import com.ibexlab.samples.constants.Token;
-import com.ibexlab.samples.utils.ApiException;
-import com.ibexlab.samples.utils.Crypto;
-import com.ibexlab.samples.utils.JsonRpc;
+import com.ibexlab.api.examples.constants.Address;
+import com.ibexlab.api.examples.constants.Token;
+import com.ibexlab.api.examples.utils.ApiException;
+import com.ibexlab.api.examples.utils.Crypto;
+import com.ibexlab.api.examples.utils.JsonRpc;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class Transfer {
         // NLP 토큰 이체
         transfer(
                 Token.NLP, // 사용할 토큰
-                Address.ADDRESS1, // 송신 계좌 
+                Address.ADDRESS1, // 송신 계좌
                 Address.SECRET1, // 송신 계좌 비밀키
                 Address.ADDRESS2, // 수신 계좌
                 "10", // 금액

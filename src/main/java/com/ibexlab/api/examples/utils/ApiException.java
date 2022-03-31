@@ -1,4 +1,4 @@
-package com.ibexlab.samples.utils;
+package com.ibexlab.api.examples.utils;
 
 public class ApiException extends RuntimeException {
     private int status;
